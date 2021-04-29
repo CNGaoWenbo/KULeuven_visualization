@@ -151,20 +151,22 @@ option = {
                     //loop: false,        
                     axisType: 'category',
                     show: true,
-                    autoPlay: true,
+                    autoPlay: false,
                     playInterval: 1500,
                     bottom:'0%',
-                    data: ['2011', '2013', '2015', '2018']         
+                    data: ['2011', '2013', '2015', '2018'],
+                    label:{
+                        formatter:['2011', '2013', '2015', '2018']
+                    }
+                    
                 },  
+
+
         tooltip: {
             trigger: 'item',
             triggerOn: 'mousemove'
         },
-        series: [
-                    {
-                        type: 'funnel',
-                    },
-                ],
+
         toolbox: {
             orient: 'vertical',
             top: 'center',
@@ -179,15 +181,13 @@ option = {
     options:[
     {
         title: {
-            text: 'Net Transfer per Province in Gender',//title
+            text: 'Net Transfer per Province in Gender(CNY)',//title
             subtext: 'year 2011',
             left: 'right',
             top: 'top'
         },
-        tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c}CNY'
-        },
+        
+
         toolbox: {
             orient: 'vertical',
             top: 'center',
@@ -204,13 +204,18 @@ option = {
             data: maleProData//ctr+shift+l rename
         },
         series: [
+
+ 
+
             {//bottom
+
 
                 name: 'Female',
                 type: 'funnel',//gragh type
-                width: '70%',
+                maxSize: 1017,
                 height: '40%',
-                left: '10%',
+                //left: '5%',
+                //right:'5%',
                 top: '45%',
                 sort: 'ascending',
                 data: femalSeriesData11
@@ -218,9 +223,10 @@ option = {
             {//top
                 name: 'Male',
                 type: 'funnel',
-                width: '70%',
+                maxSize: 863.64,
                 height: '40%',
-                left: '10%',
+                //left: '10%',
+                //right: '10%',
                 top: '5%',
             
                 data: malSeriesData11
@@ -231,15 +237,12 @@ option = {
 
     {
         title: {
-            text: 'Net Transfer per Province in Gender',//title
+            text: 'Net Transfer per Province in Gender(CNY)',//title
             subtext: 'year 2013',
             left: 'right',
             top: 'top'
         },
-        tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c}CNY'
-        },
+
         toolbox: {
             orient: 'vertical',
             top: 'center',
@@ -260,9 +263,10 @@ option = {
 
                 name: 'Female',
                 type: 'funnel',//gragh type
-                width: '70%',
+                maxSize: 1989.98/2,
                 height: '40%',
-                left: '10%',
+                //left: '10%',
+                //rigth:'10%',
                 top: '45%',
                 sort: 'ascending',
                 data: femalSeriesData13
@@ -270,9 +274,10 @@ option = {
             {//top
                 name: 'Male',
                 type: 'funnel',
-                width: '70%',
+                maxSize: 1563.12/2,
                 height: '40%',
-                left: '10%',
+                //left: '10%',
+                //right:'10%',
                 top: '5%',
             
                 data: malSeriesData13
@@ -282,15 +287,12 @@ option = {
     },
     {
         title: {
-            text: 'Net Transfer per Province in Gender',//title
+            text: 'Net Transfer per Province in Gender(CNY)',//title
             subtext: 'year 2015',
             left: 'right',
             top: 'top'
         },
-        tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c}CNY'
-        },
+
         toolbox: {
             orient: 'vertical',
             top: 'center',
@@ -311,9 +313,9 @@ option = {
 
                 name: 'Female',
                 type: 'funnel',//gragh type
-                width: '70%',
+                maxSize: 3115.2/3,
                 height: '40%',
-                left: '10%',
+                //left: '10%',
                 top: '45%',
                 sort: 'ascending',
                 data: femalSeriesData15
@@ -321,9 +323,9 @@ option = {
             {//top
                 name: 'Male',
                 type: 'funnel',
-                width: '70%',
+                maxSize: 2280.79/3,
                 height: '40%',
-                left: '10%',
+                //left: '10%',
                 top: '5%',
             
                 data: malSeriesData15
@@ -334,15 +336,12 @@ option = {
 
     {
         title: {
-            text: 'Net Transfer per Province in Gender',//title
+            text: 'Net Transfer per Province in Gender(CNY)',//title
             subtext: 'year 2018',
             left: 'right',
             top: 'top'
         },
-        tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c}CNY'
-        },
+        
         toolbox: {
             orient: 'vertical',
             top: 'center',
@@ -360,12 +359,15 @@ option = {
         },
         series: [
             {//bottom
-
+                
                 name: 'Female',
                 type: 'funnel',//gragh type
-                width: '70%',
-                height: '40%',
-                left: '10%',
+                
+                maxSize: 3108.95/3,
+                //xAxis : 'dataMax',
+                //height: '40%',
+                
+               
                 top: '45%',
                 sort: 'ascending',
                 data: femalSeriesData18
@@ -373,9 +375,12 @@ option = {
             {//top
                 name: 'Male',
                 type: 'funnel',
-                width: '70%',
+                maxSize: 2069.16/3,
+                
                 height: '40%',
-                left: '10%',
+                //middle:'50',
+                //left: 0,
+                //right: 'dataMax',
                 top: '5%',
             
                 data: malSeriesData18
